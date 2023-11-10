@@ -1,0 +1,23 @@
+driver:
+navigator:
+
+
+
+Using your mtest2 executable, multiply some matrices. In your lab10.txt:
+
+
+Document at least four runs of mtest with different matrix dimensions
+Suggestion: mtest 500 500 500 500
+
+
+What can you say about the performance of mtest2 and your three matrix multiply algorithms?
+
+
+Did your implementations of ijk, kij, and jki match the predicted performance in the slides? If not, why do you suppose that is?
+
+
+Last week, an article was posted about matrix multiplication efficiency.
+The article stated that optimizing matrix multiplication was difficult,
+and that it took an AI 50 years to come up with an improvement. Is there
+a difference between what that article was discussing and what is going on here? Explain your answer.
+
