@@ -1,0 +1,27 @@
+driver:tgroom 
+navigator:jcronin
+
+9.
+
+Document at least 4 runs of mtest with different matrix dimensions:
+Testing two 2x2 matrices..
+Time elapsed was 7.000000
+Testing two 100x100 matrices..
+Time  elapsed was 18613.000000
+Testing a 200x100 matrix with a 100x200 matrix..
+Time elapsed was 55403.000000
+Testing two 500x500 matrices..
+Time elapsed was 1012361.000000
+Testing 700x500 matrix and a 500x700 matrix..
+Time elapsed was 1978478.000000
+Testing a 1000x750 matrix with a 750x500 matrix..
+Time elapsed was 3024780.000000
+Testing a 44x99 matrix with a 99x57 matrix..
+Time elapsed was 1237.000000
+
+
+What can you say about the performance of mtest and your matrix_multiply() algorithm?
+If you had to give your program big O notation, what would it be and why?
+
+mtest uses 2 for loops matrix_multiply() uses 3. I would say this program uses exponential growth.
+Big O of n to the x exponential power.
