@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "matrix.h"
-#include "matrix_multiplykij.h"
-#include "matrix_multiplyjki.h"
-
+#include "matrix_multiplyijk.h"
 
 Matrix matrix_multiplyijk(Matrix A, Matrix B) {
     if (A.columns != B.rows) {

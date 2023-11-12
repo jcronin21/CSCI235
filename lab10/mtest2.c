@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include "matrix.h"
 #include "matrix_multiplyijk.h"
 #include "matrix_multiplykij.h"
 #include "matrix_multiplyjki.h"
-
+#include <time.h>
 void fill_matrix(Matrix m) {
         int nRow = m.rows;
         int nCol = m.columns;
@@ -137,8 +136,9 @@ int main(int argc, char *argv[]) {
     }
 
     int which_one = str_to_int(argv[5]);
-
-    double result = timed_test((int)r1, (int)c1, (int)r2, (int)c2, which_one);
+    timed_test((int)r1, (int)c1, (int)r2, (int)c2, 1); // ijk
+    timed_test((int)r1, (int)c1, (int)r2, (int)c2, 2); // kij
+    timed_test((int)r1, (int)c1, (int)r2, (int)c2, 3); // jki
 
     return 0;
 }
