@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include "matrix.h"
-#include "matrix_multiplykij.h"
 #include "matrix_multiplyijk.h"
+#include "matrix_multiplykij.h"
 #include "matrix_multiplyjki.h"
 
 void fill_matrix(Matrix m) {
@@ -20,16 +20,42 @@ void fill_matrix(Matrix m) {
         }
 }
 
-double timed_test(int r1, int c1, int r2, int c2,int which_one) {
+Matrix pick_matrix_multiply(Matrix m1, Matrix m2, int which_one) {
+    switch (which_one) {
+        case 1:
+            return matrix_multiply_ijk(m1, m2);
+        case 2:
+            return matrix_multiply_kij(m1, m2);
+        case 3:
+            return matrix_multiply_jki(m1, m2);
+        default:
+            printf("Invalid choice for matrix multiplication function.\n");
+            exit(1);
+    }
+}
+
+int str_to_int(const char *str) {
+    int result = 0;
+    int sign = 1;
+
+    if (*str == '-') {
+        sign = -1;
+        str++;
+    }
+
+    while (*str >= '0' && *str <= '9') {
+        result = result * 10 + (*str - '0');
+        str++;
+    }
+
+    return sign * result;
+}
+
+double timed_test(int r1, int c1, int r2, int c2, int which_one) {
     if (c1 != r2) {
         printf("Errors occurred...exiting..\n");
         return 0;
     }
-
-if(which_one == 1){
-  
-
-}
 
     Matrix m1 = create_matrix(r1, c1);
     fill_matrix(m1);
@@ -39,7 +65,7 @@ if(which_one == 1){
     clock_t start_time, end_time;
     start_time = clock();
 
-    Matrix output = matrix_multiply(m1, m2);
+    Matrix output = pick_matrix_multiply(m1, m2, which_one);
 
     end_time = clock();
 
@@ -48,10 +74,13 @@ if(which_one == 1){
     printf("Time elapsed was %f seconds\n", total_time);
 
     return total_time;
-
 }
 
-int main(int argc, char *argv[],int which_one) {
+
+
+
+
+/*int main(int argc, char *argv[],int which_one) {
     if (argc != 5) {
         printf("Usage: %s <row1> <col1> <row2> <col2>\n", argv[0]);
         return 1;
@@ -74,7 +103,45 @@ int main(int argc, char *argv[],int which_one) {
 
     return 0;
 }
+*/
+int main(int argc, char *argv[]) {
+    if (argc != 6) {
+        printf("Usage: %s <row1> <col1> <row2> <col2> <which_one>\n", argv[0]);
+        return 1;
+    }
 
+    double r1 = 0, c1 = 0, r2 = 0, c2 = 0;
+    int i = 0;
+
+    while (argv[1][i] >= '0' && argv[1][i] <= '9') {
+        r1 = r1 * 10 + (argv[1][i] - '0');
+        i++;
+    }
+
+    i = 0;
+    while (argv[2][i] >= '0' && argv[2][i] <= '9') {
+        c1 = c1 * 10 + (argv[2][i] - '0');
+        i++;
+    }
+
+    i = 0;
+    while (argv[3][i] >= '0' && argv[3][i] <= '9') {
+        r2 = r2 * 10 + (argv[3][i] - '0');
+        i++;
+    }
+
+    i = 0;
+    while (argv[4][i] >= '0' && argv[4][i] <= '9') {
+        c2 = c2 * 10 + (argv[4][i] - '0');
+        i++;
+    }
+
+    int which_one = str_to_int(argv[5]);
+
+    double result = timed_test((int)r1, (int)c1, (int)r2, (int)c2, which_one);
+
+    return 0;
+}
 
 
 
