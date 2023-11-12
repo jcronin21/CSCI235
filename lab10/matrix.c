@@ -13,3 +13,10 @@ Matrix create_matrix(unsigned rows, unsigned columns) {
 
     return matrix;
 }
+
+void free_matrix(Matrix m) {
+    for (unsigned i = 0; i < m.rows; i++) {
+        free(m.data[i]);
+    }
+    free(m.data);
+}

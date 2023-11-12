@@ -3,7 +3,7 @@
 #include "matrix.h"
 #include "matrix_multiplykij.h"
 
-Matrix matrix_multiply_kij(Matrix A, Matrix B) {
+Matrix matrix_multiplykij(Matrix A, Matrix B) {
     if (A.columns != B.rows) {
         printf("Matrices are not compatible for multiplication.\n");
         exit(1);

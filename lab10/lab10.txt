@@ -1,5 +1,5 @@
-driver:
-navigator:
+driver:jcronin@unca.edu
+navigator:tgroom@unca.edu
 
 
 
@@ -8,13 +8,39 @@ Using your mtest2 executable, multiply some matrices. In your lab10.txt:
 
 Document at least four runs of mtest with different matrix dimensions
 Suggestion: mtest 500 500 500 500
+for the first test here are the results 
+
+Matrix dimensions: 100x100 and 100x100
+Time elapsed for algorithm 1: 0.009218 seconds
+Time elapsed for algorithm 2: 0.009034 seconds
+Time elapsed for algorithm 3: 0.009660 seconds
+jcronin@arden:~/csci235/lab10$ 
+
+other tests:
+jcronin@arden:~/csci235/lab10$ ./mtest2 500 500 500 500 1
+Matrix dimensions: 500x500 and 500x500
+Time elapsed for algorithm 1: 1.720737 seconds
+Time elapsed for algorithm 2: 1.133891 seconds
+Time elapsed for algorithm 3: 1.819794 seconds
+jcronin@arden:~/csci235/lab10$ ./mtest2 500 500 500 500 2
+Matrix dimensions: 500x500 and 500x500
+Time elapsed for algorithm 1: 1.781212 seconds
+Time elapsed for algorithm 2: 1.210522 seconds
+Time elapsed for algorithm 3: 1.833296 seconds
+jcronin@arden:~/csci235/lab10$ ./mtest2 500 500 500 500 3
+Matrix dimensions: 500x500 and 500x500
+Time elapsed for algorithm 1: 1.724387 seconds
+Time elapsed for algorithm 2: 1.116626 seconds
+Time elapsed for algorithm 3: 1.763999 seconds
+
+
 
 
 What can you say about the performance of mtest2 and your three matrix multiply algorithms?
-
+kij seems to be the slowest.
 
 Did your implementations of ijk, kij, and jki match the predicted performance in the slides? If not, why do you suppose that is?
-
+I think so, considering the examples in the slides.
 
 Last week, an article was posted about matrix multiplication efficiency.
 The article stated that optimizing matrix multiplication was difficult,
