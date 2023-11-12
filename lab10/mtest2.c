@@ -23,11 +23,11 @@ void fill_matrix(Matrix m) {
 Matrix pick_matrix_multiply(Matrix m1, Matrix m2, int which_one) {
     switch (which_one) {
         case 1:
-            return matrix_multiply_ijk(m1, m2);
+            return matrix_multiplyijk(m1, m2);
         case 2:
-            return matrix_multiply_kij(m1, m2);
+            return matrix_multiplykij(m1, m2);
         case 3:
-            return matrix_multiply_jki(m1, m2);
+            return matrix_multiplyjki(m1, m2);
         default:
             printf("Invalid choice for matrix multiplication function.\n");
             exit(1);

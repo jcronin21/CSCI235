@@ -9,11 +9,11 @@ typedef struct matrix {
 
 Matrix create_matrix(unsigned rows, unsigned columns);
 
-void print_matrix(Matrix);
+Matrix matrix_multiplyijk(Matrix A, Matrix B);
+Matrix matrix_multiplykij(Matrix A, Matrix B);
+Matrix matrix_multiplyjki(Matrix A, Matrix B);
 
+void print_matrix(Matrix);
 void free_matrix(Matrix);
 
 #endif
-
-
-
