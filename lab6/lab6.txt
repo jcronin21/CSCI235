@@ -1,0 +1,19 @@
+driver: jcronin
+navigator: jcronin
+
+
+
+
+what C function would you use if you wanted to read in a file line-by-line
+(instead of character-by-character as we did in the previous problem)?
+
+-- I would use getline or fgets
+-- However,I am a bit confused with getline. Does that only return
+-- the line length?
+
+Update your lab6.txt to indicate what you finished and what your my_grep.c does,
+including anything you attempted but were unable to finish or debug. Also include
+whatever limitations / design decisions you made for your my_grep.c
+
+-- my_grep.c program iterates through each char in the array and compares it to 
+-- string_to_find. then if a match is found in string_to_find it prints string_to_find. 

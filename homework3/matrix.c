@@ -31,10 +31,11 @@ void free_matrix(Matrix matrix) {
     }
     free(matrix.data);
 }
-
+/*
 int main() {
     Matrix final1 = create_matrix(3, 3);
     print_matrix(final1);
     free_matrix(final1);
     return 0;
 }
+*/

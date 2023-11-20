@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "import_data.h"
+
+double help_funct(const char *str);
 
 Matrix import_data(const char* filename) {
     FILE* file = fopen(filename, "r");
@@ -20,12 +23,10 @@ Matrix import_data(const char* filename) {
             double value = help_funct(token);
 
             if (columns == 0) {
-                data = (double**)malloc(sizeof(double*));
-            } else {
                 data = (double**)realloc(data, (rows + 1) * sizeof(double*));
             }
 
-            data[rows] = (double*)malloc(sizeof(double));
+            data[rows] = (double*)realloc(data[rows], (columns + 1) * sizeof(double));
             data[rows][columns] = value;
 
             columns++;
@@ -38,7 +39,7 @@ Matrix import_data(const char* filename) {
 
     fclose(file);
 
-    Matrix result = {rows, columns, data};
+    Matrix result = {rows, (data != NULL) ? columns : 0, data};
     return result;
 }
 

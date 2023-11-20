@@ -1,0 +1,9 @@
+driver: jcronin
+navigator: jcronin
+
+
+
+POINT A involves memory allocation and accessing the values stored in the array.
+POINT B is iterating through the array and setting new values for the resized array.
+
+There would be an out of bounds error and a memory allocation error. Calloc is called but new_size is not intalized.

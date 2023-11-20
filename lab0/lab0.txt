@@ -1,0 +1,6 @@
+driver: jcronin
+a. pwd - prints the full path of the current directory
+b.ls -a - list the contents of a directory
+c. cd - shows you the current directory that youre in
+d. rm - removes a file
+e. .. -used to level up a directory

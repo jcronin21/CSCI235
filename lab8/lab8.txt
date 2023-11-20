@@ -1,0 +1,27 @@
+driver:jcronin@unca.edu
+navigator:csmith43@unca.edu
+
+
+prediction for #4: I think that it will give an error and print a hex address
+result: my prediction was kinda right
+
+
+prediction for #5: I think that it will not be optimized and unable to run
+through a debugger.
+
+
+prediction for #6: I think it will continue to print a memory address
+but when if I change 3 to 30000 it will be a long address
+result: memory address changed again 0x7ffd135e9f60
+
+Write a couple of sentences about your experience with gdb. Good, bad,
+indifferent? Will you use it in the future? Do you wish you had it
+earlier in this class? Answer some or all of these questions.
+-- I think gdb is pretty cool. I feel like I will have more appreciation
+for it once I get comfortable using it. 
+
+What are a couple of defensive programming techniques that you 
+can use to help make your programs stronger and more resistant 
+to buffer overflows or other mischief?
+--use different functions to prevent overflow and when it is
+possible to account for possible overflow by allocating enough space.
