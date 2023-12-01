@@ -1,0 +1,39 @@
+driver:@jbrandy1@unca.edu
+navigator:jcronin@unca.edu
+
+
+3.
+jcronin@arden:~/csci235/lab12$ ./a.out 1
+hi (main thread)
+elapsed=0.010639
+bye (main thread)
+sum=1000000.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$ ./a.out 2
+hi (main thread)
+elapsed=0.018655
+bye (main thread)
+sum=544812.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$ ./a.out 5
+hi (main thread)
+elapsed=0.078833
+bye (main thread)
+sum=235469.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$ 
+
+
+
+
+4. what do you notice about the difference between the times for psum1 and psum2,
+and what effect does increasing the number of threads have on each? What do you make of those results?
+
+
+
+5a. Do you need the mutex on accesses of a[i]? Why or why not? Do you need the mutex on changes to sum? Why or why not?
+
+
+5b. In a comment below the table and your other comments so far, what do you notice about the difference between the times
+for psum2 and psum3, and what effect does increasing the number of threads have on each? What do you make of those results?
+
+
+6.what do you notice about the difference between the times for psum3 and psum4, and what effect does increasing the number
+of threads have on each? What do you make of those results, and how can you relate it to Lab10?
