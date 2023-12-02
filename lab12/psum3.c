@@ -21,6 +21,9 @@ int main(int argc, char* argv[]) {
 
   Sem_init(&mutex, 0, 1);
 
+for (int i = 0; i < threads; i++) {
+    pthread_create(&thread_handles[i], NULL, thread_sum, (void*)(long)i);
+}
 
 
   if (argc != 2) {
@@ -47,13 +50,14 @@ int main(int argc, char* argv[]) {
     
   // main thread starts at index 0, jumps by number of threads
   int rank=0;
+  double local_sum = 0;
   for (int i=rank; i<N; i+=threads) {
     //ACCESSING A SHARED VARIABLE (sum) WITHOUT PROTECTING=BUG HERE!
-    P(&mutex);
-    sum += a[i];
-    V(&mutex);
-    //sum+=a[i];
+    local_sum += a[i];
   }
+    P(&mutex);
+    sum += local_sum;
+    V(&mutex);
     
   for (int thread=0; thread<threads-1; thread++) {
     pthread_join(thread_handles[thread],NULL);
@@ -70,7 +74,9 @@ int main(int argc, char* argv[]) {
 }
 
 void* thread_sum(void* rank) {
-    for (int i=(int)rank; i<N; i+=threads) {
+    long my_rank = (long)rank;
+    double local_sum = 0;
+    for (int i=(int)my_rank; i<N; i+=threads) {
       //ACCESSING A SHARED VARIABLE (sum) WITHOUT PROTECTING=BUG HERE!
         P(&mutex);
         sum += a[i];

@@ -13,27 +13,80 @@ hi (main thread)
 elapsed=0.018655
 bye (main thread)
 sum=544812.000000 (N=1000000)
-jcronin@arden:~/csci235/lab12$ ./a.out 5
+jcronin@arden:~/csci235/lab12$ ./psum1 4
 hi (main thread)
-elapsed=0.078833
+elapsed=0.058176
 bye (main thread)
-sum=235469.000000 (N=1000000)
-jcronin@arden:~/csci235/lab12$ 
+sum=280802.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$
 
 
 
 
 4. what do you notice about the difference between the times for psum1 and psum2,
 and what effect does increasing the number of threads have on each? What do you make of those results?
+jcronin@arden:~/csci235/lab12$ ./psum2 1
+hi (main thread)
+elapsed=0.061247
+bye (main thread)
+sum=1000000.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$
+jcronin@arden:~/csci235/lab12$ ./psum2 2
+hi (main thread)
+elapsed=0.424032
+bye (main thread)
+sum=1000000.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$
+jcronin@arden:~/csci235/lab12$ ./psum2 4
+hi (main thread)
+elapsed=1.518905
+bye (main thread)
+sum=1000000.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$
+
+I notice that it takes a bit longer in this execution than it did in the first one.
+Adding more threads could maybe not help with reducing the execution time. But with the use of
+the semaphore adding more threads might not even make the execution time lower.
+I guess overall it's just about the pros and cons to parallelism. 
 
 
 
-5a. Do you need the mutex on accesses of a[i]? Why or why not? Do you need the mutex on changes to sum? Why or why not?
+5a. Do you need the mutex on accesses of a[i]? Why or why not?
+Do you need the mutex on changes to sum? Why or why not?
+I don't think you need the mutex on accesses of a[i] because each thread is seperate.
+But, multiple threads can update the shared sum.
+jcronin@arden:~/csci235/lab12$ ./psum3 1
+hi (main thread)
+elapsed=0.011471
+bye (main thread)
+sum=1000000.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$ ./psum3 2
+hi (main thread)
+elapsed=0.075904
+bye (main thread)
+sum=1000000.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$
+jcronin@arden:~/csci235/lab12$ ./psum3 4
+hi (main thread)
+elapsed=0.947138
+bye (main thread)
+sum=1000000.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$
 
 
-5b. In a comment below the table and your other comments so far, what do you notice about the difference between the times
-for psum2 and psum3, and what effect does increasing the number of threads have on each? What do you make of those results?
+5b. In a comment below the table and your other comments so far, what do you notice about the
+difference between the times for psum2 and psum3, and what effect does increasing the number
+of threads have on each? What do you make of those results?
+
+The times fluctuate, I was expecting the times to keep increasing. But the times increase and decrease.
 
 
 6.what do you notice about the difference between the times for psum3 and psum4, and what effect does increasing the number
 of threads have on each? What do you make of those results, and how can you relate it to Lab10?
+
+
+
+
+
+
+
