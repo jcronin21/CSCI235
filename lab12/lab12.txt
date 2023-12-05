@@ -81,10 +81,29 @@ of threads have on each? What do you make of those results?
 The times fluctuate, I was expecting the times to keep increasing. But the times increase and decrease.
 
 
-6.what do you notice about the difference between the times for psum3 and psum4, and what effect does increasing the number
-of threads have on each? What do you make of those results, and how can you relate it to Lab10?
+6.what do you notice about the difference between the times for psum3 and psum4, and 
+what effect does increasing the numberof threads have on each? What do you make of those 
+results, and how can you relate it to Lab10?
+jcronin@arden:~/csci235/lab12$ nano psum4.c
+jcronin@arden:~/csci235/lab12$ ./psum4 1
+hi (main thread)
+elapsed=0.023572
+bye (main thread)
+sum=2000000.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$ ./psum4 2
+hi (main thread)
+elapsed=0.015816
+bye (main thread)
+sum=2000000.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$ ./psum4 4
+hi (main thread)
+elapsed=0.018030
+bye (main thread)
+sum=2000000.000000 (N=1000000)
+jcronin@arden:~/csci235/lab12$
 
-
+I noticed the times are much faster. This is similar to lab10 because with the matrix multiply programs
+based on different algorithims and the placement of (ijk) it had an impact on the effiecency. 
 
 
 
