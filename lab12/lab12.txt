@@ -104,8 +104,7 @@ jcronin@arden:~/csci235/lab12$
 
 I noticed the times are much faster. This is similar to lab10 because with the matrix multiply programs
 based on different algorithims and the placement of (ijk) it had an impact on the effiecency. 
-
-
-
-
-
+Overall, just like optimizing matrix multiplication algorithms in Lab10,
+optimizing parallel programs involves considering factors like thread managemen and data access patterns.
+In both cases, finding the most efficient solution involves understanding the trade-offs
+and characteristics of the algorithms or parallel implementations.
